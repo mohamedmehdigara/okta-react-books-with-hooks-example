@@ -8,21 +8,21 @@ import { Home } from './Home';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <header>
-          <div>Books with Hooks</div>
-          <ul className="menu"><li><Link to="/">Home</Link></li><li><Link to="/search">Search</Link></li></ul>
-        </header>
-        <Security issuer='https://dev-322018.oktapreview.com/oauth2/default'
-                  clientId='0oanr1wquftUEJTWX0h7'
-                  redirectUri={window.location.origin + '/callback'}
-                  pkce={true}>
-          <Route path='/' exact={true} component={Home}/>
-          <SecureRoute path='/search' exact={true} component={Search}/>
-          <Route path='/callback' component={LoginCallback}/>
-        </Security>
-      </Router>
-    </div>
+  <Router>
+    <header>
+      <div>Books with Hooks</div>
+      <ul className="menu"><li><Link to="/">Home</Link></li><li><Link to="/search">Search</Link></li></ul>
+    </header>
+    <Security issuer='https://{dev-04772927.okta.com}/oauth2/default'
+              clientId='{0oa3sksfyruRmFRgK5d7}'
+              redirectUri={window.location.origin + '/callback'}
+              pkce={true}>
+      <Route path='/' exact={true} component={Home}/>
+      <SecureRoute path='/search' exact={true} component={Search}/>
+      <Route path='/callback' component={LoginCallback}/>
+    </Security>
+  </Router>
+</div>
 
   );
 }
